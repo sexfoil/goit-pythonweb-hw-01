@@ -10,7 +10,7 @@ def get_logger_info(name: str = "task_logger"):
     handler.setLevel(logging.INFO)
     handler.setFormatter(log_formatter)
 
-    logger = logging.getLogger("factory_logger")
+    logger = logging.getLogger(name)
     logger.setLevel(logging.INFO)
     logger.addHandler(handler)
     return logger
