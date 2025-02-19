@@ -1,18 +1,8 @@
-import logging
+import task_logger
 from abc import ABC, abstractmethod
 
 
-log_formatter = logging.Formatter(
-    "[%(asctime)s] [%(name)s] [%(levelname)s]: %(message)s"
-)
-
-handler = logging.StreamHandler()
-handler.setLevel(logging.INFO)
-handler.setFormatter(log_formatter)
-
-logger = logging.getLogger("factory_logger")
-logger.setLevel(logging.INFO)
-logger.addHandler(handler)
+logger = task_logger.get_logger_info("factory_logger")
 
 
 class Vehicle(ABC):
